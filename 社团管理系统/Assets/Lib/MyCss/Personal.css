@@ -1,0 +1,233 @@
+﻿body {
+}
+@charset "utf-8";
+
+/* element public */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html body {
+    font-size: 12px;
+    font-family: "PingFangSC-Regular","PingFang SC","Helvetica Neue","Microsoft YaHei","Hiragino Sans GB",Tahoma,Helvetica,Arial,sans-serif,"WenQuanYi Micro Hei",Verdana;
+    line-height: 1.2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header, nav, main, aside, footer, article, section, figure {
+    display: block;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, select, p, blockquote, th, td, span {
+    margin: 0;
+    padding: 0;
+}
+
+input, select, textarea {
+    outline: none;
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    resize: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    border-width: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    a:link {
+        color: #666666;
+    }
+
+    a:hover {
+        color: #1c98b0;
+    }
+
+    a:visited {
+        color: #666666;
+    }
+
+/*container*/
+.container {
+    width: 100%;
+    height: auto;
+    background-color: #1c98b0;
+    background-size: 100% 100%;
+    float: left;
+}
+
+/*header*/
+.header {
+    width: 990px;
+    height: 100px;
+    margin: 30px auto 10px auto;
+    overflow: hidden;
+}
+
+    .header img {
+        width: 990px;
+        height: 100px;
+        float: left;
+    }
+
+/*nav*/
+.nav {
+    width: 990px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 30px auto 15px auto;
+    overflow: hidden;
+}
+
+    .nav a {
+        color: #ffffff;
+        margin-right: 56px;
+    }
+
+        .nav a:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+/*wrapper*/
+.wrapper {
+    width: 990px;
+    height: auto;
+    background-color: #ffffff;
+    margin: 20px auto 10px auto;
+    padding-bottom: 50px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/*register*/
+.register {
+    width: 990px;
+    height: auto;
+    padding-bottom: 10px;
+    float: left;
+}
+
+.register_form {
+    width: 988px;
+    height: auto;
+    margin-top: 50px;
+    float: left;
+}
+
+    .register_form form {
+        width: 988px;
+        height: auto;
+        float: left;
+    }
+
+    .register_form dl {
+        width: 987px;
+        height: 60px;
+        float: left;
+    }
+
+    .register_form dt {
+        width: 230px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 14px;
+        text-align: right;
+        float: left;
+    }
+
+        .register_form dt span {
+            color: #FF8000;
+            margin-right: 3px;
+        }
+
+    .register_form dd {
+        width: 360px;
+        height: 60px;
+        float: left;
+    }
+
+        .register_form dd input {
+            width: 330px;
+            height: 30px;
+            margin: 15px 0 0 30px;
+            float: left;
+        }
+
+            .register_form dd input.submit {
+                color: #FFF;
+                letter-spacing: 3px;
+                background-color: #f4645f;
+                border: 0;
+            }
+
+/*footer*/
+.footer {
+    width: 990px;
+    height: auto;
+    color: #ffffff;
+    margin: 30px auto 0 auto;
+    overflow: hidden;
+}
+
+.footer_nav {
+    width: 990px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+}
+
+    .footer_nav a {
+        color: #ffffff;
+        margin-right: 56px;
+    }
+
+        .footer_nav a:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+.footer_logo {
+    width: 990px;
+    height: 100px;
+    margin: 40px 0;
+    float: left;
+}
+
+    .footer_logo img {
+        width: 990px;
+        height: 100px;
+        float: left;
+    }
+
+.footer_copyright {
+    width: 990px;
+    height: 38px;
+    line-height: 38px;
+    float: left;
+}
+
+    .footer_copyright span:nth-child(1) {
+        text-align: left;
+        float: left;
+    }
+
+    .footer_copyright span:nth-child(2) {
+        text-align: right;
+        letter-spacing: 2px;
+        float: right;
+    }

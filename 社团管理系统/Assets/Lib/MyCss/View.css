@@ -1,0 +1,463 @@
+﻿@charset "utf-8";
+
+/* element public */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html body {
+    font-size: 12px;
+    font-family: "PingFangSC-Regular","PingFang SC","Helvetica Neue","Microsoft YaHei","Hiragino Sans GB",Tahoma,Helvetica,Arial,sans-serif,"WenQuanYi Micro Hei",Verdana;
+    line-height: 1.2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header, nav, main, aside, footer, article, section, figure {
+    display: block;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, select, p, blockquote, th, td, span {
+    margin: 0;
+    padding: 0;
+}
+
+input, select, textarea {
+    outline: none;
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    resize: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    border-width: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    a:link {
+        color: #666666;
+    }
+
+    a:hover {
+        color: #1c98b0;
+    }
+
+    a:visited {
+        color: #666666;
+    }
+
+/*container*/
+.container {
+    width: 100%;
+    height: auto;
+    background-color: #1c98b0;
+    background-size: 100% 100%;
+    float: left;
+}
+
+/*header*/
+.header {
+    width: 990px;
+    height: 100px;
+    margin: 30px auto 10px auto;
+    overflow: hidden;
+}
+
+    .header img {
+        width: 990px;
+        height: 100px;
+        float: left;
+    }
+
+/*nav*/
+.nav {
+    width: 990px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 30px auto 15px auto;
+    overflow: hidden;
+}
+
+    .nav a {
+        color: #ffffff;
+        margin-right: 56px;
+    }
+
+        .nav a:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+/*wrapper*/
+.wrapper {
+    width: 990px;
+    height: auto;
+    background-color: #ffffff;
+    margin: 20px auto 10px auto;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/*plot*/
+.plot {
+    width: 990px;
+    height: auto;
+    float: left;
+}
+
+.plot_title {
+    width: 950px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1c98b0;
+    margin: 20px 0 0 20px;
+    float: left;
+}
+
+.plot_image {
+    width: 304px;
+    height: 475px;
+    margin: 20px 0 0 20px;
+    float: left;
+}
+
+    .plot_image img {
+        width: 304px;
+        height: 475px;
+        float: left;
+    }
+
+.plot_info {
+    width: 620px;
+    height: auto;
+    margin: 15px 0 0 30px;
+    float: left;
+}
+
+    .plot_info dl {
+        width: 309px;
+        height: auto;
+        float: left;
+    }
+
+        .plot_info dl dt {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            border-bottom: 1px dotted #cccccc;
+        }
+
+        .plot_info dl dd {
+            width: 224px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            border-bottom: 1px dotted #cccccc;
+        }
+
+.plot_content {
+    width: 950px;
+    height: auto;
+    margin: 10px 0 0 20px;
+    float: left;
+}
+
+    .plot_content p {
+        width: 950px;
+        height: auto;
+        line-height: 34px;
+        font-size: 14px;
+        text-indent: 25px;
+        float: left;
+    }
+
+/*person*/
+.person {
+    width: 990px;
+    height: auto;
+    float: left;
+}
+
+    .person h2 {
+        width: 950px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #1c98b0;
+        margin: 20px 0 0 20px;
+        float: left;
+    }
+
+    .person article {
+        width: 302px;
+        height: auto;
+        background-color: #fcfcfc;
+        margin: 20px 0 0 20px;
+        padding-bottom: 20px;
+        float: left;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .person article:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        .person article img {
+            width: 120px;
+            height: 120px;
+            margin: 20px 0 0 91px;
+            float: left;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+        }
+
+        .person article h3 {
+            width: 262px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            margin: 15px 0 0 20px;
+            float: left;
+        }
+
+        .person article p {
+            width: 262px;
+            height: auto;
+            line-height: 25px;
+            font-size: 13px;
+            margin: 5px 0 0 20px;
+            float: left;
+            overflow: hidden;
+        }
+
+/*still*/
+.still {
+    width: 990px;
+    height: auto;
+    float: left;
+}
+
+    .still h2 {
+        width: 950px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #1c98b0;
+        margin: 15px 0 0 20px;
+        float: left;
+    }
+
+    .still figure {
+        width: 304px;
+        height: auto;
+        margin: 20px 0 0 20px;
+        float: left;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .still figure:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        .still figure img {
+            width: 304px;
+            height: 190px;
+            float: left;
+        }
+
+        .still figure figcaption {
+            width: 304px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 13px;
+            text-align: center;
+            background-color: #f9f9f9;
+            float: left;
+        }
+
+/*prize*/
+.prize {
+    width: 990px;
+    height: auto;
+    float: left;
+}
+
+    .prize h2 {
+        width: 950px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #1c98b0;
+        margin: 20px 0 0 20px;
+        float: left;
+    }
+
+    .prize article {
+        width: 465px;
+        height: auto;
+        margin: 20px 0 0 20px;
+        padding-bottom: 16px;
+        float: left;
+        border-bottom: 1px dashed #dddddd;
+    }
+
+        .prize article:nth-last-child(1) {
+            border-bottom: 0;
+        }
+
+        .prize article:nth-last-child(2) {
+            border-bottom: 0;
+        }
+
+        .prize article h3 {
+            width: 455px;
+            height: 30px;
+            line-height: 30px;
+            color: #37a;
+            float: left;
+        }
+
+        .prize article span {
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            margin: 5px 5px 0 0;
+            float: left;
+        }
+
+/*comment*/
+.comment {
+    width: 990px;
+    height: auto;
+    float: left;
+}
+
+    .comment h2 {
+        width: 950px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #1c98b0;
+        margin: 15px 0 0 20px;
+        float: left;
+    }
+
+    .comment img {
+        width: 302px;
+        height: auto;
+        margin: 20px 0 0 20px;
+        float: left;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .comment img:nth-child(3n) {
+            margin-right: 0;
+        }
+
+/*moral*/
+.moral {
+    width: 990px;
+    height: auto;
+    float: left;
+}
+
+    .moral h2 {
+        width: 950px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #1c98b0;
+        margin: 15px 0 0 20px;
+        float: left;
+    }
+
+    .moral img {
+        width: 302px;
+        height: auto;
+        margin: 20px 0 0 20px;
+        float: left;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .moral img:nth-child(3n) {
+            margin-right: 0;
+        }
+
+/*footer*/
+.footer {
+    width: 990px;
+    height: auto;
+    color: #ffffff;
+    margin: 30px auto 0 auto;
+    overflow: hidden;
+}
+
+.footer_nav {
+    width: 990px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+}
+
+    .footer_nav a {
+        color: #ffffff;
+        margin-right: 56px;
+    }
+
+        .footer_nav a:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+.footer_logo {
+    width: 990px;
+    height: 100px;
+    margin: 40px 0;
+    float: left;
+}
+
+    .footer_logo img {
+        width: 990px;
+        height: 100px;
+        float: left;
+    }
+
+.footer_copyright {
+    width: 990px;
+    height: 38px;
+    line-height: 38px;
+    float: left;
+}
+
+    .footer_copyright span:nth-child(1) {
+        text-align: left;
+        float: left;
+    }
+
+    .footer_copyright span:nth-child(2) {
+        text-align: right;
+        letter-spacing: 2px;
+        float: right;
+    }

@@ -1,0 +1,23 @@
+﻿.container {
+    width: contain;
+    height: contain;
+    /*  background-color:azure;*/
+    margin: 0 auto;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#btnlogin {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: auto;
+    bottom: auto;
+    margin: auto;
+}
+.img{
+    text-align:center;
+}
