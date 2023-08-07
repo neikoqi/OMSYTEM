@@ -1,0 +1,825 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D06FAD56-36B3-4B4F-B651-124DC9037A9E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>社团管理系统</RootNamespace>
+    <AssemblyName>社团管理系统</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44367</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\FristDataBase.mdf" />
+    <Content Include="App_Data\FristDataBase_log.ldf">
+      <DependentUpon>FristDataBase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Assets\Images\Frist\bili.png" />
+    <Content Include="Assets\Images\MassImage\1685369723362.png" />
+    <Content Include="Assets\Images\MassImage\1685370273139.png" />
+    <Content Include="Assets\Images\MassImage\1685370283583.png" />
+    <Content Include="Assets\Images\MassImage\dog.png" />
+    <Content Include="Assets\Images\MassImage\1685369780253.png" />
+    <Content Include="Assets\Images\MassImage\ex.png" />
+    <Content Include="Assets\Images\MassImage\kun.png" />
+    <Content Include="Assets\Images\MassImage\hou.png" />
+    <Content Include="Assets\Images\MassImage\cat.png" />
+    <Content Include="Assets\Images\MassImage\scp.png" />
+    <Content Include="Assets\Images\MassImage\gui.png" />
+    <Content Include="Assets\Images\p2_silaimu.9f32c9eb.png" />
+    <Content Include="Assets\Images\p2_tree_a.53b77648.png" />
+    <Content Include="Assets\Images\p2_tree_b.c99e9f12.png" />
+    <Content Include="Assets\Images\p2_tree_c.2389476c.png" />
+    <Content Include="Assets\Images\p2_tree_d.ca9f46af.png" />
+    <Content Include="Assets\Images\p2_tree_e.ce0efc4d.png" />
+    <Content Include="Assets\Images\p2_tree_h_a.01e8d965.png" />
+    <Content Include="Assets\Images\p2_tree_h_b.67b6db89.png" />
+    <Content Include="Assets\Images\p2_tree_h_c.03e5afb3.png" />
+    <Content Include="Assets\Images\p2_tree_h_d.65b559ea.png" />
+    <Content Include="Assets\Images\p2_tree_h_e.bdfeab3c.png" />
+    <Content Include="Assets\Images\p4_2_tree_a.ea340123.png" />
+    <Content Include="Assets\Images\p4_2_tree_b.2b4752d2.png" />
+    <Content Include="Assets\Images\p4_2_tree_c.b86d3a61.png" />
+    <Content Include="Assets\Images\p4_2_tree_d.9fc52a9b.png" />
+    <Content Include="Assets\Images\p4_2_tree_e.412e25f8.png" />
+    <Content Include="Assets\Images\p4_2_tree_f.a4bd5ea6.png" />
+    <Content Include="Assets\Images\p4_2_tree_g.95b0717b.png" />
+    <Content Include="Assets\Images\p4_2_tree_h.2b4230f2.png" />
+    <Content Include="Assets\Images\p4_2_tree_i.a330e4c9.png" />
+    <Content Include="Assets\Images\p7_tree1_a.abf4100a.png" />
+    <Content Include="Assets\Images\p7_tree2_a.3aa5ea2a.png" />
+    <Content Include="Assets\Images\p7_tree2_b.4f71524c.png" />
+    <Content Include="Assets\Lib\Css\bootstrap-grid.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-grid.min.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-grid.rtl.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.min.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.rtl.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.min.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.rtl.css" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Assets\Lib\Css\bootstrap.css" />
+    <Content Include="Assets\Lib\Css\bootstrap.min.css" />
+    <Content Include="Assets\Lib\Css\bootstrap.rtl.css" />
+    <Content Include="Assets\Lib\Css\bootstrap.rtl.min.css" />
+    <Content Include="Assets\Lib\JS\bootstrap.bundle.js" />
+    <Content Include="Assets\Lib\JS\bootstrap.bundle.min.js" />
+    <Content Include="Assets\Lib\JS\bootstrap.esm.js" />
+    <Content Include="Assets\Lib\JS\bootstrap.esm.min.js" />
+    <Content Include="Assets\Lib\JS\bootstrap.js" />
+    <Content Include="Assets\Lib\JS\bootstrap.min.js" />
+    <Content Include="Assets\Lib\JS\echarts.min.js" />
+    <Content Include="Assets\Lib\MyCss\center.css" />
+    <Content Include="Assets\Lib\MyCss\FristPage.css" />
+    <Content Include="Assets\Lib\MyCss\Notice.css" />
+    <Content Include="Assets\Lib\MyCss\Personal.css" />
+    <Content Include="Assets\Lib\MyCss\Style.css" />
+    <Content Include="Assets\Lib\MyCss\View.css" />
+    <Content Include="Assets\Lib\MyCss\xuanfu.css" />
+    <Content Include="Assets\Lib\MyJs\Notice.js" />
+    <Content Include="Assets\Lib\MyJs\rotation.js" />
+    <Content Include="Assets\Lib\Newtonsoft.Json.dll" />
+    <Content Include="View\Administrator\Chart.aspx" />
+    <Content Include="View\Administrator\CoForum.aspx" />
+    <Content Include="View\Administrator\CoNotice.aspx" />
+    <Content Include="View\Administrator\ContentManage.aspx" />
+    <Content Include="View\Administrator\Forum.aspx" />
+    <Content Include="View\Administrator\ForumAdd.aspx" />
+    <Content Include="View\Administrator\ForumEdite.aspx" />
+    <Content Include="View\Administrator\ForumTypeAdd.aspx" />
+    <Content Include="View\Administrator\Forum_List.aspx" />
+    <Content Include="View\Administrator\FristPage.aspx" />
+    <Content Include="View\Administrator\Inco\WebForm1.aspx" />
+    <Content Include="View\Administrator\MassAD.aspx" />
+    <Content Include="View\Administrator\MassAdd.aspx" />
+    <Content Include="View\Administrator\MassDAa.aspx" />
+    <Content Include="View\Administrator\MassList.aspx" />
+    <Content Include="View\Administrator\Master.aspx" />
+    <Content Include="View\Administrator\CoMoActivities.aspx" />
+    <Content Include="View\Administrator\CoMoMembers.aspx" />
+    <Content Include="View\Administrator\ForumType.aspx" />
+    <Content Include="View\Administrator\MoType.aspx" />
+    <Content Include="View\Administrator\MoTypeAdd.aspx" />
+    <Content Include="View\Administrator\NoticeType.aspx" />
+    <Content Include="View\Administrator\return\NoticeAdd.aspx" />
+    <Content Include="View\Administrator\return\NoticeList.aspx" />
+    <Content Include="View\Administrator\Orgranizaton Mass\wenxue.aspx" />
+    <Content Include="View\Administrator\Orgranizaton Mass\wenxue.html" />
+    <Content Include="View\Administrator\OthersManage.aspx" />
+    <Content Include="View\Administrator\OtMoApply.aspx" />
+    <Content Include="View\Administrator\return\OtMoInformation.aspx" />
+    <Content Include="View\Administrator\SINoticePage.aspx" />
+    <Content Include="View\Administrator\SiteManage.aspx" />
+    <Content Include="View\Administrator\UserManage.aspx" />
+    <Content Include="View\Administrator\UsManager.aspx" />
+    <Content Include="View\Administrator\UsMembers.aspx" />
+    <Content Include="View\Administrator\UsPresident.aspx" />
+    <Content Include="View\FristPage.html" />
+    <Content Include="View\Login.aspx" />
+    <Content Include="View\Others\HtmlPage1.html" />
+    <Content Include="View\Others\page.html" />
+    <Content Include="View\Presidents\Mass.aspx" />
+    <Content Include="View\Presidents\MASSO.aspx" />
+    <Content Include="View\Presidents\MoActivities.aspx" />
+    <Content Include="View\Presidents\MoApply.aspx" />
+    <Content Include="View\Presidents\MoInformation.aspx" />
+    <Content Include="View\Presidents\MoMembers.aspx" />
+    <Content Include="View\Others\login.html" />
+    <Content Include="View\Others\Regisiter.html" />
+    <Content Include="View\Presidents\MoNotice.aspx" />
+    <Content Include="View\Register.aspx" />
+    <Content Include="View\LoRe.html" />
+    <Content Include="View\User\ActivesView.aspx" />
+    <Content Include="View\User\ForumView.aspx" />
+    <Content Include="View\User\HelloPersonal.aspx" />
+    <Content Include="View\LoRe.aspx" />
+    <Content Include="View\User\Mass.aspx" />
+    <Content Include="View\User\MassView.aspx" />
+    <Content Include="View\User\MoActivities.aspx" />
+    <Content Include="View\User\Forum.aspx" />
+    <Content Include="View\User\Fristpage.aspx" />
+    <Content Include="View\User\MoInformation.aspx" />
+    <Content Include="View\User\MoNotice.aspx" />
+    <Content Include="View\User\Notice.aspx" />
+    <Content Include="View\User\NoticeView.aspx" />
+    <Content Include="View\User\Organziation Mass\wenxue.aspx" />
+    <Content Include="View\User\PersonalCenter.aspx" />
+    <Content Include="View\User\More.aspx" />
+    <Content Include="View\User\Personal\Personal.html" />
+    <Content Include="View\User\Personal\Personalinformation.aspx" />
+    <Content Include="View\User\Personal\Examine.aspx" />
+    <Content Include="View\User\Print.aspx" />
+    <Content Include="View\User\qian.html" />
+    <Content Include="View\User\WebForm1.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Function.cs" />
+    <Compile Include="Models\LINQ.cs" />
+    <Compile Include="Models\MsSqlHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Administrator\Administrator.Master.cs">
+      <DependentUpon>Administrator.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Administrator.Master.designer.cs">
+      <DependentUpon>Administrator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Chart.aspx.cs">
+      <DependentUpon>Chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Chart.aspx.designer.cs">
+      <DependentUpon>Chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\CoForum.aspx.cs">
+      <DependentUpon>CoForum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\CoForum.aspx.designer.cs">
+      <DependentUpon>CoForum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\CoNotice.aspx.cs">
+      <DependentUpon>CoNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\CoNotice.aspx.designer.cs">
+      <DependentUpon>CoNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\ContentManage.aspx.cs">
+      <DependentUpon>ContentManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\ContentManage.aspx.designer.cs">
+      <DependentUpon>ContentManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Forum.aspx.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Forum.aspx.designer.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\ForumAdd.aspx.cs">
+      <DependentUpon>ForumAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\ForumAdd.aspx.designer.cs">
+      <DependentUpon>ForumAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\ForumEdite.aspx.cs">
+      <DependentUpon>ForumEdite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\ForumEdite.aspx.designer.cs">
+      <DependentUpon>ForumEdite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\ForumTypeAdd.aspx.cs">
+      <DependentUpon>ForumTypeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\ForumTypeAdd.aspx.designer.cs">
+      <DependentUpon>ForumTypeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Forum_List.aspx.cs">
+      <DependentUpon>Forum_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Forum_List.aspx.designer.cs">
+      <DependentUpon>Forum_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\FristPage.aspx.cs">
+      <DependentUpon>FristPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\FristPage.aspx.designer.cs">
+      <DependentUpon>FristPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Inco\ForumEdite.ashx.cs">
+      <DependentUpon>ForumEdite.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Inco\Forum_add.ashx.cs">
+      <DependentUpon>Forum_add.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Inco\MassAdd.ashx.cs">
+      <DependentUpon>MassAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Inco\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Inco\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\MassAD.aspx.cs">
+      <DependentUpon>MassAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\MassAD.aspx.designer.cs">
+      <DependentUpon>MassAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\MassAdd.aspx.cs">
+      <DependentUpon>MassAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\MassAdd.aspx.designer.cs">
+      <DependentUpon>MassAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\MassDAa.aspx.cs">
+      <DependentUpon>MassDAa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\MassDAa.aspx.designer.cs">
+      <DependentUpon>MassDAa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\MassList.aspx.cs">
+      <DependentUpon>MassList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\MassList.aspx.designer.cs">
+      <DependentUpon>MassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Master.aspx.cs">
+      <DependentUpon>Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Master.aspx.designer.cs">
+      <DependentUpon>Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\CoMoActivities.aspx.cs">
+      <DependentUpon>CoMoActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\CoMoActivities.aspx.designer.cs">
+      <DependentUpon>CoMoActivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\CoMoMembers.aspx.cs">
+      <DependentUpon>CoMoMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\CoMoMembers.aspx.designer.cs">
+      <DependentUpon>CoMoMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\ForumType.aspx.cs">
+      <DependentUpon>ForumType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\ForumType.aspx.designer.cs">
+      <DependentUpon>ForumType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\MoType.aspx.cs">
+      <DependentUpon>MoType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\MoType.aspx.designer.cs">
+      <DependentUpon>MoType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\MoTypeAdd.aspx.cs">
+      <DependentUpon>MoTypeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\MoTypeAdd.aspx.designer.cs">
+      <DependentUpon>MoTypeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\NoticeType.aspx.cs">
+      <DependentUpon>NoticeType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\NoticeType.aspx.designer.cs">
+      <DependentUpon>NoticeType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\return\NoticeAdd.aspx.cs">
+      <DependentUpon>NoticeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\return\NoticeAdd.aspx.designer.cs">
+      <DependentUpon>NoticeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\return\NoticeList.aspx.cs">
+      <DependentUpon>NoticeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\return\NoticeList.aspx.designer.cs">
+      <DependentUpon>NoticeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Orgranizaton Mass\Ad Organziation Mass.Master.cs">
+      <DependentUpon>Ad Organziation Mass.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Orgranizaton Mass\Ad Organziation Mass.Master.designer.cs">
+      <DependentUpon>Ad Organziation Mass.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\Orgranizaton Mass\wenxue.aspx.cs">
+      <DependentUpon>wenxue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\Orgranizaton Mass\wenxue.aspx.designer.cs">
+      <DependentUpon>wenxue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\OthersManage.aspx.cs">
+      <DependentUpon>OthersManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\OthersManage.aspx.designer.cs">
+      <DependentUpon>OthersManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\OtMoApply.aspx.cs">
+      <DependentUpon>OtMoApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\OtMoApply.aspx.designer.cs">
+      <DependentUpon>OtMoApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\return\OtMoInformation.aspx.cs">
+      <DependentUpon>OtMoInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\return\OtMoInformation.aspx.designer.cs">
+      <DependentUpon>OtMoInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\SINoticePage.aspx.cs">
+      <DependentUpon>SINoticePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\SINoticePage.aspx.designer.cs">
+      <DependentUpon>SINoticePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\SiteManage.aspx.cs">
+      <DependentUpon>SiteManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\SiteManage.aspx.designer.cs">
+      <DependentUpon>SiteManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\UserManage.aspx.cs">
+      <DependentUpon>UserManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\UserManage.aspx.designer.cs">
+      <DependentUpon>UserManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\UsManager.aspx.cs">
+      <DependentUpon>UsManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\UsManager.aspx.designer.cs">
+      <DependentUpon>UsManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\UsMembers.aspx.cs">
+      <DependentUpon>UsMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\UsMembers.aspx.designer.cs">
+      <DependentUpon>UsMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Administrator\UsPresident.aspx.cs">
+      <DependentUpon>UsPresident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Administrator\UsPresident.aspx.designer.cs">
+      <DependentUpon>UsPresident.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\Mass.aspx.cs">
+      <DependentUpon>Mass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\Mass.aspx.designer.cs">
+      <DependentUpon>Mass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\MassAdd.ashx.cs">
+      <DependentUpon>MassAdd.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\MASSO.aspx.cs">
+      <DependentUpon>MASSO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\MASSO.aspx.designer.cs">
+      <DependentUpon>MASSO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\MoNotice.aspx.cs">
+      <DependentUpon>MoNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\MoNotice.aspx.designer.cs">
+      <DependentUpon>MoNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\Presidents.Master.cs">
+      <DependentUpon>Presidents.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\Presidents.Master.designer.cs">
+      <DependentUpon>Presidents.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\MoActivities.aspx.cs">
+      <DependentUpon>MoActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\MoActivities.aspx.designer.cs">
+      <DependentUpon>MoActivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\MoApply.aspx.cs">
+      <DependentUpon>MoApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\MoApply.aspx.designer.cs">
+      <DependentUpon>MoApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\MoInformation.aspx.cs">
+      <DependentUpon>MoInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\MoInformation.aspx.designer.cs">
+      <DependentUpon>MoInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Presidents\MoMembers.aspx.cs">
+      <DependentUpon>MoMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Presidents\MoMembers.aspx.designer.cs">
+      <DependentUpon>MoMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\ActivesView.aspx.cs">
+      <DependentUpon>ActivesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\ActivesView.aspx.designer.cs">
+      <DependentUpon>ActivesView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\ForumView.aspx.cs">
+      <DependentUpon>ForumView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\ForumView.aspx.designer.cs">
+      <DependentUpon>ForumView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\HelloPersonal.aspx.cs">
+      <DependentUpon>HelloPersonal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\HelloPersonal.aspx.designer.cs">
+      <DependentUpon>HelloPersonal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoRe.aspx.cs">
+      <DependentUpon>LoRe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LoRe.aspx.designer.cs">
+      <DependentUpon>LoRe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Mass.aspx.cs">
+      <DependentUpon>Mass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Mass.aspx.designer.cs">
+      <DependentUpon>Mass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\MassView.aspx.cs">
+      <DependentUpon>MassView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\MassView.aspx.designer.cs">
+      <DependentUpon>MassView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\MoActivities.aspx.cs">
+      <DependentUpon>MoActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\MoActivities.aspx.designer.cs">
+      <DependentUpon>MoActivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Forum.aspx.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Forum.aspx.designer.cs">
+      <DependentUpon>Forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Fristpage.aspx.cs">
+      <DependentUpon>Fristpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Fristpage.aspx.designer.cs">
+      <DependentUpon>Fristpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\MoInformation.aspx.cs">
+      <DependentUpon>MoInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\MoInformation.aspx.designer.cs">
+      <DependentUpon>MoInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\MoNotice.aspx.cs">
+      <DependentUpon>MoNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\MoNotice.aspx.designer.cs">
+      <DependentUpon>MoNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Notice.aspx.cs">
+      <DependentUpon>Notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Notice.aspx.designer.cs">
+      <DependentUpon>Notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\NoticeView.aspx.cs">
+      <DependentUpon>NoticeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\NoticeView.aspx.designer.cs">
+      <DependentUpon>NoticeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Organziation Mass\User Organization Mass.Master.cs">
+      <DependentUpon>User Organization Mass.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Organziation Mass\User Organization Mass.Master.designer.cs">
+      <DependentUpon>User Organization Mass.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Organziation Mass\wenxue.aspx.cs">
+      <DependentUpon>wenxue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Organziation Mass\wenxue.aspx.designer.cs">
+      <DependentUpon>wenxue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\PersonalCenter.aspx.cs">
+      <DependentUpon>PersonalCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\PersonalCenter.aspx.designer.cs">
+      <DependentUpon>PersonalCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\More.aspx.cs">
+      <DependentUpon>More.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\More.aspx.designer.cs">
+      <DependentUpon>More.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Personal\Personal.Master.cs">
+      <DependentUpon>Personal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Personal\Personal.Master.designer.cs">
+      <DependentUpon>Personal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Personal\Personalinformation.aspx.cs">
+      <DependentUpon>Personalinformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Personal\Personalinformation.aspx.designer.cs">
+      <DependentUpon>Personalinformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Personal\Examine.aspx.cs">
+      <DependentUpon>Examine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Personal\Examine.aspx.designer.cs">
+      <DependentUpon>Examine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Lib\Css\bootstrap-grid.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-grid.min.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.min.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.min.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap.min.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap.rtl.css.map" />
+    <Content Include="Assets\Lib\Css\bootstrap.rtl.min.css.map" />
+    <Content Include="Assets\Lib\JS\bootstrap.bundle.js.map" />
+    <Content Include="Assets\Lib\JS\bootstrap.bundle.min.js.map" />
+    <Content Include="Assets\Lib\JS\bootstrap.esm.js.map" />
+    <Content Include="Assets\Lib\JS\bootstrap.esm.min.js.map" />
+    <Content Include="Assets\Lib\JS\bootstrap.js.map" />
+    <Content Include="Assets\Lib\JS\bootstrap.min.js.map" />
+    <Content Include="View\Administrator\Administrator.Master" />
+    <Content Include="View\Presidents\Presidents.Master" />
+    <Content Include="View\User\User.Master" />
+    <Content Include="View\User\Personal\Personal.Master" />
+    <Content Include="View\Administrator\Orgranizaton Mass\Ad Organziation Mass.Master" />
+    <Content Include="View\User\Organziation Mass\User Organization Mass.Master" />
+    <Content Include="View\Administrator\Inco\Forum_add.ashx" />
+    <Content Include="View\Administrator\Inco\ForumEdite.ashx" />
+    <Content Include="View\Administrator\Inco\MassAdd.ashx" />
+    <Content Include="View\Presidents\MassAdd.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Images\Img_Om\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{9d991512-3529-40ae-bb49-dc59622ff08c}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{1e0a2bbb-9e64-43c2-94f3-57986c336bc0}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODELS\MODELS.csproj">
+      <Project>{6298516b-bf7c-40e7-aec2-1abfcbd61d26}</Project>
+      <Name>MODELS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UTILITY\UTILITY.csproj">
+      <Project>{e481629c-807e-4b75-a4d8-2a5af88117e8}</Project>
+      <Name>UTILITY</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60901</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44367/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
