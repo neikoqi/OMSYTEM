@@ -1,0 +1,8 @@
+D:\VsProject\社团管理系统\UTILITY\bin\Debug\UTILITY.dll
+D:\VsProject\社团管理系统\UTILITY\bin\Debug\UTILITY.pdb
+D:\VsProject\社团管理系统\UTILITY\obj\Debug\UTILITY.csproj.AssemblyReference.cache
+D:\VsProject\社团管理系统\UTILITY\obj\Debug\UTILITY.csproj.CoreCompileInputs.cache
+D:\VsProject\社团管理系统\UTILITY\obj\Debug\UTILITY.dll
+D:\VsProject\社团管理系统\UTILITY\obj\Debug\UTILITY.pdb
+D:\VsProject\社团管理系统\UTILITY\bin\Debug\Newtonsoft.Json.dll
+D:\VsProject\社团管理系统\UTILITY\obj\Debug\UTILITY.csproj.CopyComplete
