@@ -1,0 +1,26 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Administrator/Administrator.Master" AutoEventWireup="true" CodeBehind="MoType.aspx.cs" Inherits="社团管理系统.View.Administrator.MoType1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <table border="1" align="center" width="100%">
+        <tr><td>编号</td><td>类型</td><td>状态</td><td>操作</td></tr>
+        <%
+            string id = Request.QueryString["id"];/*获取当前删除的id*/
+            if(id!=null)
+            {
+                BLL.BLL_Type.del(int.Parse(id));
+                UTILITY.JsHelper.AlertAndParentUrl("删除成功", "MoType.aspx");
+            }
+            List<MODELS.MOD_Type> list = BLL.BLL_Type.list(); /*前台调用业务层bll*/
+            for (int i = 0; i < list.Count; i++)
+            {
+ %>      
+        <tr ><td><%=list[i].Id %></td><td><%=list[i].Title %></td><td><%=list[i].State %></td><td><a href="MoType.aspx?id=<%=list[i].Id %>">删除</a></td></tr>
+        <%} %>  
+    </table>
+
+<a href="MoTypeAdd.aspx">添加类型</a>
+</asp:Content>
+
+
+
