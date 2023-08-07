@@ -1,0 +1,6 @@
+D:\VsProject\社团管理系统\MODELS\bin\Debug\MODELS.dll
+D:\VsProject\社团管理系统\MODELS\bin\Debug\MODELS.pdb
+D:\VsProject\社团管理系统\MODELS\obj\Debug\MODELS.csproj.AssemblyReference.cache
+D:\VsProject\社团管理系统\MODELS\obj\Debug\MODELS.csproj.CoreCompileInputs.cache
+D:\VsProject\社团管理系统\MODELS\obj\Debug\MODELS.dll
+D:\VsProject\社团管理系统\MODELS\obj\Debug\MODELS.pdb
