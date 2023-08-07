@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<link href="../../Assets/Lib/MyCss/View.css" rel="stylesheet" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+
+	<script type="text/javascript">
+		function uprint() {
+			var userAgent = navigator.userAgent.toLowerCase(); //取得浏览器的userAgent字符串
+			if (userAgent.indexOf("trident") > -1) {
+				alert("请使用google或者360浏览器打印");
+				return false;
+			} else if (userAgent.indexOf('msie') > -1) {
+				var onlyChoseAlert = simpleAlert({
+					"content": "请使用Google或者360浏览器打印",
+					"buttons": {
+						"确定": function () {
+							onlyChoseAlert.close();
+						}
+					}
+				})
+				alert("请使用google或者360浏览器打印");
+				return false;
+			} else {//其它浏览器使用lodop
+				var oldstr = document.body.innerHTML;
+				var headstr = "<html><head><title></title></head><body>";
+				var footstr = "</body></html>";
+				//执行隐藏打印区域不需要打印的内容
+				document.getElementById("otherpho").style.display = "none";
+				var printData = document.getElementById("studentPhoTable").innerHTML; //获得 div 里的所有 html 数据
+				var wind = window.open("", "newwin",
+					"toolbar=no,scrollbars=yes,menubar=no");
+				wind.document.body.innerHTML = headstr + printData + footstr;
+				wind.print();
+				//打印结束后，放开隐藏内容
+				document.getElementById("otherpho").style.display = "block";
+				wind.close();
+				window.document.body.innerHTML = oldstr;
+			}
+		}
+
+
+		function preview(fang) {
+			if (fang < 10) {
+				bdhtml = window.document.body.innerHTML;//获取当前页的html代码
+				sprnstr = "<!--startprint" + fang + "-->";//设置打印开始区域
+				eprnstr = "<!--endprint" + fang + "-->";//设置打印结束区域
+				prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 18); //从开始代码向后取html
+				prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+				window.document.body.innerHTML = prnhtml;
+				window.print();
+				window.document.body.innerHTML = bdhtml;
+			} else {
+				window.print();
+			}
+		}
+		//打印操作
+		function print3() {
+			var userAgent = navigator.userAgent.toLowerCase(); //取得浏览器的userAgent字符串
+			if (userAgent.indexOf("trident") > -1) {
+				alert("请使用google或者360浏览器打印");
+				return false;
+			} else if (userAgent.indexOf('msie') > -1) {
+				var onlyChoseAlert = simpleAlert({
+					"content": "请使用Google或者360浏览器打印",
+					"buttons": {
+						"确定": function () {
+							onlyChoseAlert.close();
+						}
+					}
+				})
+				alert("请使用google或者360浏览器打印");
+				return false;
+			} else {//其它浏览器使用lodop
+				var oldstr = document.body.innerHTML;
+				var headstr = "<html><head><title></title></head><body>";
+				var footstr = "</body></html>";
+				//执行隐藏打印区域不需要打印的内容
+				document.getElementById("otherpho").style.display = "none";
+				var printData = document.getElementById("studentPhoTable").innerHTML; //获得 div 里的所有 html 数据
+				var wind = window.open("", "newwin",
+					"toolbar=no,scrollbars=yes,menubar=no");
+				wind.document.body.innerHTML = headstr + printData + footstr;
+				wind.print();
+				//打印结束后，放开隐藏内容
+				document.getElementById("otherpho").style.display = "block";
+				wind.close();
+				window.document.body.innerHTML = oldstr;
+			}
+		}
+
+
+
+	</script>
+
+
+</head>
+
+
+<body>
+	...
+	<!--打印内容开始-->
+	<div id="fang">
+		2222
+		<table>
+			<tr>
+				<td>
+					11
+				</td>
+				<td>
+					33
+				</td>
+				<td>
+					22
+				</td>
+			</tr>
+			<tr>
+				<td>
+					11
+				</td>
+				<td>
+					33
+				</td>
+				<td>
+					22
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!--打印内容结束-->
+	...
+	<!--打印内容开始-->
+	<div id='studentPhoTable'>
+		...
+	</div>
+	<!--打印内容结束-->
+	...
+
+	<!--<input type="button" onclick="uprint()" value="确定打印" />-->
+	<input type='button' name='button_export' title='打印' onclick=preview(fang) value='打印'>
+
+	<input type="button" onclick="print3()" value="确定打印" />
+
+
+
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<div id="main" style="width:80%;height:400px;margin: 0 auto"></div>
+		<!-- ;margin-top:80px;控制距离顶部距离 -->
+		<div id="main2" style="width:80%;height:400px;margin: 0 auto"></div>
+		<!-- ECharts单文件引入 -->
+		<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+		<script type="text/javascript">
+			// 路径配置
+			require.config({
+				paths: {
+					echarts: 'http://echarts.baidu.com/build/dist'
+				}
+			});
+
+			// 使用
+			require(
+				[
+					'echarts',
+					'echarts/chart/bar', // 使用柱状图就加载bar模块，按需加载
+					'echarts/chart/line'
+				],
+				function (ec) {
+					// 基于准备好的dom，初始化echarts图表
+					var myChart = ec.init(document.getElementById('main'));
+					var myChart2 = ec.init(document.getElementById('main2'));
+
+					var option = { //具体细节的描述
+						title: {
+							text: 'FAST和FAST_USP算法运行时间对比（小阈值）',
+							textStyle: { //主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+								fontSize: 14,
+								fontStyle: 'normal',
+								fontWeight: 'bold',
+							},
+						},
+						tooltip: {
+							trigger: 'axis'
+						},
+						legend: {
+							data: ['FAST', 'FAST_USP']
+						},
+						toolbox: { //可以选择具体数据，柱状图，折线图，还原，保存图片的的切换选择
+							show: true,
+							feature: {
+								dataView: {
+									show: true,
+									readOnly: false
+								},
+								magicType: {
+									show: true,
+									type: ['line', 'bar'] //可选折线图和柱状图
+								},
+								restore: {
+									show: true  //恢复默认
+								},
+								saveAsImage: {
+									show: true // 存储为图片的功能
+								}
+							}
+						},
+						calculable: true,
+						xAxis: [{
+							type: 'category',
+							//name: 'min_sup(%)'
+							data: ['0.35', '0.3', '0.25', '0.2', '0.15', '0.1'],
+							name: 'min_sup(%)',
+							position: 'left'
+						}],
+						yAxis: [{
+							type: 'value',
+							name: '运行时间(s)',
+							position: 'left'
+						}],
+						series: [{
+							name: 'FAST',
+							type: 'line',// bar
+							data: [3.7, 4.2, 4.8, 5.6, 7.9, 18.2],
+							color: '#CC0066'
+						},
+						{
+							name: 'FAST_USP',
+							type: 'line',//bar
+							data: [1.6, 1.8, 2.0, 2.3, 2.8, 6.7],
+							color: '#009999'
+						}
+						]
+					};
+
+					var option2 = {
+						title: {
+							text: 'FAST和FAST_USP算法运行时间对比（大阈值）',
+							textStyle: { //主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+								fontSize: 14,
+								fontStyle: 'normal',
+								fontWeight: 'bold',
+							},
+						},
+						tooltip: {
+							trigger: 'axis'
+						},
+						legend: {
+							data: ['FAST', 'FAST_USP']
+						},
+						toolbox: {
+							show: true,
+							feature: {
+								dataView: {
+									show: true,
+									readOnly: false
+								},
+								magicType: {
+									show: true,
+									type: ['line', 'bar']
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: true,
+						xAxis: [{
+							type: 'category',
+							//name: 'min_sup(%)'
+							data: ['1.2', '1.0', '0.8', '0.6', '0.4', '0.2'],
+							name: 'min_sup(%)',
+							position: 'left'
+						}],
+						yAxis: [{
+							type: 'value',
+							name: '运行时间(s)',
+							position: 'left'
+						}],
+						series: [{
+							name: 'FAST',
+							type: 'bar',
+							data: [19.5, 19.8, 21.7, 25.1, 32.5, 48.9],
+							color: '#CC0066'
+						},
+						{
+							name: 'FAST_USP',
+							type: 'bar',
+							data: [15.0, 16.6, 17.3, 17.4, 19.6, 22.7],
+							color: '#009999' // 设置颜色
+						}
+						]
+					};
+
+
+
+					// 为echarts对象加载数据
+					myChart.setOption(option);
+					myChart2.setOption(option2);
+				}
+			);
+		</script>
+	</body>
+
+
+
+
+</html>

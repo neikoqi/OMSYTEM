@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.Master.cs" Inherits="社团管理系统.View.User.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ 
+    <title></title>
+    <link  rel="stylesheet" href="../../Assets/Lib/MyCss/FristPage.css"/>
+    <script src="../../Assets/Lib/MyJs/Notice.js"></script>
+    <link href="../../Assets/Lib/MyCss/Notice.css" rel="stylesheet" />
+    <link href="../../Assets/Lib/MyCss/center.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Assets/lib/css/bootstrap.min.css" />
+    <style type="text/css">
+        body, button, dd, dl, dt, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul, a, div, span {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+    </style>
+   
+  
+  
+
+
+</head>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+<body>
+
+
+
+
+    <div class="navbar">
+       
+        <a href="Fristpage.aspx">首页</a>
+        <a href="Notice.aspx">公告</a>
+        <a href="Forum.aspx">论坛</a>
+        <a href="MoInformation.aspx">社团</a>
+        <a href="MoActivities.aspx">社团活动</a>
+        <a href="MoNotice.aspx">社团公告</a>
+        <a href="More.aspx">更多</a>
+        <a href="PersonalCenter.aspx" class="right">个人中心</a>
+
+
+    </div>
+  
+       
+
+  
+<%--    <div >
+       
+        <div class="focus">
+            <a href="javascript:;" class="focus_l">
+                &lt;
+            </a>
+            <a href="javascript:;" class="focus_r"> &gt;</a>
+            <ul class="pic_ul">
+                <li>
+                    <a href="#"><img src="../../Assets/Images/p2_silaimu.9f32c9eb.png" /></a>
+                    
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../../Assets/Images/p2_tree_a.53b77648.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../../Assets/Images/p2_tree_b.c99e9f12.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../../Assets/Images/p2_tree_c.2389476c.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#"> <img src="../../Assets/Images/p2_tree_d.ca9f46af.png" />   </a>
+                </li>
+                <li>
+                    <a href="#"><img src="../../Assets/Images/p2_tree_e.ce0efc4d.png" /> 
+                    </a>
+                </li>
+
+            </ul>
+            <ol class="focus_ol">
+            </ol>
+        </div>--%>
+       <%-- <p></p>--%>
+
+
+ <%--   </div>--%>
+  
+
+<%--    <div class="footer">
+        <a class="bottom" href="#">回到顶部</a>
+        <h2>底部</h2>
+    </div>--%>
+
+
+        <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <!DOCTYPE html>
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
