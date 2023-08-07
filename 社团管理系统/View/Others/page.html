@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/vue.js"></script>
+
+</head>
+<body>
+    <div class="container" id="app">
+
+        <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" class="form-control" placeholder="请输入姓名" id="name" v-model="name">
+        </div>
+        <div class="form-group">
+            <label for="pwd">密码</label>
+            <input type="text" class="form-control" placeholder="请输入密码" id="pwd" v-model="pwd">
+        </div>
+
+        <div class="form-group">
+            <label>性别</label>
+            <div class="form-check-inline">
+                <input type="radio" class="form-check-inline" id="sexM" name="sex" value="男" v-model="sex">
+                <label class="form-check-inline" for="sexM">男</label>
+            </div>
+            <div class="form-check-inline">
+                <input type="radio" class="form-check-inline" id="sexF" name="sex" value="女" v-model="sex">
+                <label class="form-check-inline" for="sexF">女</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>政治面貌</label>
+            <select name="" class="form-control" v-model="face">
+                <option value="共青团员">共青团员</option>
+                <option value="党员">党员</option>
+                <option value="无党派人士">无党派人士</option>
+                <option value="群众">群众</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" @click="add">增加</button>
+
+        <hr />
+        <table class="table table-bordered">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>密码</th>
+                <th>性别</th>
+                <th>政治面貌</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="(a,index) in users">
+                <td>{{index+1}}</td>
+                <td>{{a.name}}</td>
+                <td>{{a.pwd}}</td>
+                <td>{{a.sex}}</td>
+                <td>{{a.face}}</td>
+                <td>
+                    <button class="btn btn-primary" @click="update(index)">增加</button>
+                    <button class="btn btn-danger" @click="del(index)">删除</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				name: "",
+				pwd: "",
+				sex: "男",
+				face: "",
+				users:[{
+					name:"张三",
+					pwd:"123456",
+					sex:"女",
+					face:"共青团员"
+				}]
+			},
+
+			methods:{
+				add(){
+					var index=this.users.findIndex(a=>a.name==this.name);
+					if(index==-1){
+
+
+					this.users.push({
+						name:this.name,
+						pwd:this.pwd,
+						sex:this.sex,
+						face:this.face
+					});
+					}else{
+						alert("找到了，不能添加重复的名字了");
+					}
+				},
+				del(index){
+					this.users.splice(index,1);
+				},
+				update(index){
+					this.users.splice(index+1,0,{
+						name: this.name,
+						pwd:this.pwd,
+						sex:this.sex,
+						face:this.face
+					});
+				}
+			}
+		})
+</script>
+</html>
