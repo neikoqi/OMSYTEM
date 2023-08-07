@@ -1,0 +1,14 @@
+D:\VsProject\社团管理系统\BLL\bin\Debug\BLL.dll
+D:\VsProject\社团管理系统\BLL\bin\Debug\BLL.pdb
+D:\VsProject\社团管理系统\BLL\bin\Debug\DAL.dll
+D:\VsProject\社团管理系统\BLL\bin\Debug\MODELS.dll
+D:\VsProject\社团管理系统\BLL\bin\Debug\UTILITY.dll
+D:\VsProject\社团管理系统\BLL\bin\Debug\DAL.pdb
+D:\VsProject\社团管理系统\BLL\bin\Debug\MODELS.pdb
+D:\VsProject\社团管理系统\BLL\bin\Debug\UTILITY.pdb
+D:\VsProject\社团管理系统\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\VsProject\社团管理系统\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\VsProject\社团管理系统\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\VsProject\社团管理系统\BLL\obj\Debug\BLL.dll
+D:\VsProject\社团管理系统\BLL\obj\Debug\BLL.pdb
+D:\VsProject\社团管理系统\BLL\bin\Debug\Newtonsoft.Json.dll
